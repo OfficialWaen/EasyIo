@@ -1,0 +1,48 @@
+body, html {
+    height: 100%;
+    text-align: center;
+}
+
+.text-green {
+    color: #4cae4c;
+}
+
+.text-purple {
+    color: #9f64d2;
+}
+
+.text-blue {
+    color: #3447d2;
+}
+
+.text-red {
+    color: #d23338;
+}
+
+#auth {
+    margin: auto;
+    transform: translateY(60%);
+}
+
+#content_chat {
+    margin-top: 30px;
+    height: 60%;
+    text-align: left;
+}
+
+#content_chat ul {
+    list-style: none;
+}
+
+#chat > div:first-child {
+    overflow: scroll;
+}
+
+#list_user, #list_user > div:first-child, #chat, #chat > div:first-child {
+    height: 100%;
+}
+
+#message {
+    margin-top: 10px;
+    height: 5%;
+}

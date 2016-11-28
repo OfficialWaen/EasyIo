@@ -1,0 +1,7 @@
+.idea
+.git
+.DS_Store
+logs/*
+/var/servers/*
+/vendor/
+run.json
