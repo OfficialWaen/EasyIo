@@ -86,11 +86,6 @@ abstract class EventEasyIoAbstract
         $this->setResponseForPublisher($response);
     }
 
-    public function dump($text)
-    {
-
-    }
-
     public function getListeners()
     {
         $users = [];
@@ -105,6 +100,11 @@ abstract class EventEasyIoAbstract
         return $users;
     }
 
+    public function dump($text)
+    {
+        global $logs;
+        file_put_contents($logs, "\n\nDUMP(" . json_encode($text) . ")", FILE_APPEND | LOCK_EX);
+    }
 
     public function getUser()
     {

@@ -19,9 +19,10 @@ class userSendMessageEasyIo extends EventEasyIoAbstract
 
     public function onEventListener($request)
     {
-
         $message = str_replace('<', "[", $request->data->message);
         $message = str_replace('>', "]", $message);
+
+        $this->dump($this->getUser()->getUsername() . ' : ' . $message);
 
         $this->setResponseForListeners([
             'username' => $this->getUser()->getUsername(),

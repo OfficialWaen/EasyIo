@@ -18,7 +18,7 @@ function exceptionHandler($exception)
 
 set_exception_handler('exceptionHandler');
 
-$easyIoServer = new EasyIoServer($argv[1], $date, $logs);
+$easyIoServer = new EasyIoServer($argv[1], $date);
 
 class UserIo
 {
@@ -109,17 +109,15 @@ class EasyIoServer
     private $master;
     public static $users = [];
     private $eventListeners;
-    private $logs;
     private $serverPath;
 
     const ERROR_BAD_REQUEST = ['code' => 1, 'title' => 'Bad request.', 'detail' => 'The request is not an object.'];
     const ERROR_PUBLISH_NOT_FOUND = ['code' => 2, 'title' => 'Publish not found.', 'detail' => 'the publish is not found'];
     const ERROR_PUBLISH_FORBIDDEN = ['code' => 3, 'title' => 'Forbidden.', 'detail' => 'You have no right to do this.'];
 
-    public function __construct($port, $date, $logs)
+    public function __construct($port, $date)
     {
         $this->serverPath = '/tmp/' . $port . '.easyIo';
-        $this->logs       = $logs;
 
         if (file_exists($this->serverPath)) {
             $server        = @file_get_contents($this->serverPath);
@@ -390,7 +388,8 @@ class EasyIoServer
 
     private function writeLog($text)
     {
-        file_put_contents($this->logs, $text, FILE_APPEND | LOCK_EX);
+        global $logs;
+        file_put_contents($logs, $text, FILE_APPEND | LOCK_EX);
     }
 
 }

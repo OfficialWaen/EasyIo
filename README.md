@@ -235,6 +235,12 @@ $ rm /tmp/<port of server>.easyIo
 - function getListeners()
 
 <p>Returns the listeners allowed to listen.</p>
+
+ <br/> 
+  
+ - function dump()
+ 
+ <p>Equivalent var_dump, but saves the dump in the server logs..</p>
  
 <br/> 
  
