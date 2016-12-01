@@ -242,8 +242,8 @@ $ rm /tmp/<port of server>.easyIo
   
  - function dump()
  
- <p>Equivalent var_dump, but saves the dump in the server logs..</p>
- 
+<p>Equivalent var_dump, but saves the dump in the server logs.</p>
+
 <br/> 
  
 - function getUser()
