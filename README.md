@@ -214,6 +214,8 @@ $ rm /tmp/<port of server>.easyIo
 
 <p>Checks if the users currently has permissions to listen.</p>
 
+ <br/> 
+  
 - function setResponseForListeners
 
 <p>Provided answers to return to listeners.</p>
